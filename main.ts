@@ -1,4 +1,13 @@
-function projectile_ () {
+function score () {
+    info.changeScoreBy(1)
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
+function overlap () {
+	
+}
+function projectile2 () {
     projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 5 5 5 5 5 5 5 5 . . . . 
@@ -17,15 +26,6 @@ function projectile_ () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 0, 0)
-}
-function score () {
-    info.changeScoreBy(1)
-}
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
-})
-function overlap () {
-	
 }
 function Hero () {
     someguy = sprites.create(img`
